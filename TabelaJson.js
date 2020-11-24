@@ -102,21 +102,20 @@ var dados = [
   }
 ]
 
-buildTable(dados);
-
-function buildTable(data){
-    var table = document.getElementById('pessoa');
-
-    for (var i = 0; i < data.length; i++){
-        var row = `<tr>
-                        <td>${data[i].nome}</td>
-                        <td>${data[i].cpf}</td>
-                        <td>${data[i].endereco.numero}</td>
-                        <td>${data[i].endereco.bairro}</td>
-                        <td>${data[i].endereco.cidade}</td>
-                        <td>${data[i].endereco.estado}</td>
-                    </tr>`
-        table.innerHTML += row
-    }
-
+window.onload = function buildTable(){
+  var table = document.getElementById("pessoa");
+  console.log(dados)
+  for (var i = 0; i < dados.length; i++){
+    console.log(dados[i].nome);
+    var row = `<tr>
+                    <td>${dados[i].nome}</td>
+                    <td>${dados[i].cpf}</td>
+                    <td>${dados[i].endereco.numero}</td>
+                    <td>${dados[i].endereco.bairro}</td>
+                    <td>${dados[i].endereco.cidade}</td>
+                    <td>${dados[i].endereco.estado}</td>
+                </tr>
+                </br>`
+    table.innerHTML += row
+  }
 }
